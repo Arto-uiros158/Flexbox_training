@@ -1,0 +1,220 @@
+/*Обнуление*/
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/*--------------------*/
+
+body {
+	font-family: "Arial MT", "Helvetica Neue", "Helvetica", sans-serif;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: column; /*располагаем главную ось по вертикали (направление - вниз)*/
+}
+.container {
+	max-width: 1180px;
+	margin: 0 auto;
+}
+
+.header {
+	background-color: #445162;
+	padding: 50px 0;
+}
+.header__row {
+	display: flex;
+	justify-content: space-between; /*"раскидываем" элементы в разные стороны контейнера*/
+}
+.header__body {
+	color: #ffffff;
+	padding: 0 20px 0 0; /*отступ, чтобы текст не касался картинки*/
+}
+.header__title {
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+	font-size: 60px;
+	margin: 0 0 40px 0;
+}
+.header__list li {
+	background: url(../img/header_check_icon.png) 0 8px no-repeat; /*хороший способ сделать нетипичные маркеры для списка*/
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+	font-size: 20px;
+	line-height: 36px;
+	padding: 0 0 0 36px;
+	margin: 0 0 12px 0;
+}
+.header__list li:last-child {
+	margin: 0;
+}
+
+.content {
+	flex: 1 1 auto; /*прижимаем футер к низу страницы*/
+}
+
+.title {
+	color: #445161;
+	font-size: 30px;
+	line-height: 36px;
+}
+
+.reference {
+	padding: 50px 0;
+}
+.reference__row {
+	display: flex;
+}
+.reference__image {
+	flex: 0 0 300px; /*задаем фиксированный размер блоку с картинкой*/
+}
+.reference__image img {
+	max-width: 100%; /*на случай, если картинка будет больше блока*/
+}
+.reference__body {
+	flex: 1 1 auto;
+	padding: 0 0 0 50px;
+}
+.reference__title {
+	margin: 0 0 38px 0;
+}
+.reference__text p {
+	margin: 0 0 25px 0;
+	color: #333333;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.articles {
+	background-color: #f5f5f5;
+	padding: 50px 0 20px 0;
+}
+.articles__title {
+	text-align: center;
+	margin: 0 0 30px 0;
+}
+.articles__row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -8px;
+}
+.articles__item {
+	flex: 0 1 50%; /*это значение вместе с flex-wrap: wrap; и позволяет получить сетку 2x2*/
+	margin: 0 0 30px 0;
+	padding: 0 8px; /*это значение вместе с отрицательным margin'ом в .articles__row позволяет картинке и тексту оставаться на местах, а отсупам появиться*/
+}
+.item__row {
+	display: flex;
+}
+.item__image {
+	flex: 0 0 200px; /*задаем фиксированный размер блоку с картинкой*/
+}
+.item__body {
+	flex: 1 1 auto;
+	padding: 0 0 0 15px;
+}
+.item__title {
+	color: #445161;
+	font-size: 24px;
+	line-height: 30px;
+	margin: 0 0 10px 0;
+}
+.item__text {
+	color: #333333;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.features {
+	padding: 50px 0;
+}
+.features__title {
+	text-align: center;
+	margin: 0 0 30px 0;
+}
+.features__body {
+	max-width: 990px;
+	margin: 0 auto;
+}
+.features__row {
+	display: flex;
+	margin: 0 -23px;
+}
+.features__column {
+	flex: 0 1 33.33%;
+	margin: 0 23px;
+	display: flex;
+}
+.features__item {
+	display: flex;
+	flex-direction: column;
+	padding: 0 0 20px 0;
+	background-color: #445162;
+	color: #fff;
+	border: 2px solid #445162;
+	border-radius: 5px;	
+}
+.features__sublabel {
+	padding: 12px 0;
+	font-size: 24px;
+	line-height: 30px;
+	text-transform: uppercase;
+	text-align: center;
+}
+.features__label {
+	padding: 12px 0;
+	font-size: 40px;
+	line-height: 30px;
+	color: #445162;
+	background-color: #fff;
+	text-align: center;
+}
+.features__text {
+	padding: 20px;
+	font-size: 14px;
+	line-height: 24px;
+	flex: 1 1 auto; /*позволяем элементу с текстом растянуться и занять всю высоту (а точнее ширину, т.к. указано свойство flex-direction: column; в .features__item), тогда кнопка "прижмется" к низу элемента-родителя */
+}
+.features__text p {
+	margin: 0 0 20px 0;
+}
+.features__text p:last-child {
+	margin: 0;
+}
+.features__btn {
+	display: block;
+	margin: 0 20px;
+	height: 40px;
+	font-size: 18px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 5px;
+	color: #445161;
+	background-color: #ffffff;
+}
+
+.footer {
+	background-color: #f5f5f5;
+}
+.footer__row {
+	display: flex;
+	height: 65px;
+	justify-content: center; 
+	align-items: center; /*выравниванием по центру*/
+}
+.footer__text {
+	color: #445162;
+	font-size: 12px;
+	letter-spacing: 0.3px;
+}

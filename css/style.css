@@ -114,6 +114,10 @@ body {
 	margin: 0 0 30px 0;
 	padding: 0 8px; /*это значение вместе с отрицательным margin'ом в .articles__row позволяет картинке и тексту оставаться на местах, а отсупам появиться*/
 }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   .articles__item { padding: 0; }
+} /*позволяет написать отдельный код для IE10+*/
+
 .item__row {
 	display: flex;
 }
@@ -153,9 +157,12 @@ body {
 }
 .features__column {
 	flex: 0 1 33.33%;
-	margin: 0 23px;
+	padding: 0 23px;
 	display: flex;
 }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+   .features__column { display: block; }
+} /*позволяет написать отдельный код для IE10+*/
 .features__item {
 	display: flex;
 	flex-direction: column;
